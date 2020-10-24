@@ -12,11 +12,11 @@ import Combine
 import Yams
 
 struct ConfigManager {
-    func get() -> AnyPublisher<KDConfig,AppError> {
-        Future<String, Error> { promise in
+    func get() -> AnyPublisher<KDConfig, AppError> {
+        Future<Data, Error> { promise in
             let kubeConfigFile = "\(NSHomeDirectory())/.kube/kd.yml"
             do {
-                let raw = try String(contentsOfFile: kubeConfigFile)
+                let raw = try NSData(contentsOfFile: kubeConfigFile) as Data
                 promise(.success(raw))
             } catch {
                 promise(.failure(AppError.readKubeConfig(error)))

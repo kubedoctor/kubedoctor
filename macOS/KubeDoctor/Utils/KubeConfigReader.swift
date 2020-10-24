@@ -17,23 +17,16 @@ struct KubeConfigReader {
             .eraseToAnyPublisher()
     }
     
-    func kubeConfigDataPublisher() -> AnyPublisher<String, Error> {
-        Future<String, Error> { promise in
+    func kubeConfigDataPublisher() -> AnyPublisher<Data, Error> {
+        Future<Data, Error> { promise in
             let kubeConfigFile = "\(NSHomeDirectory())/.kube/config"
             do {
-                let raw = try String(contentsOfFile: kubeConfigFile)
+                let raw = try NSData(contentsOfFile: kubeConfigFile) as Data
                 promise(.success(raw))
             } catch {
                 promise(.failure(AppError.readKubeConfig(error)))
             }
         }
         .eraseToAnyPublisher()
-    }
-}
-
-extension YAMLDecoder: TopLevelDecoder {
-    public typealias Input = String
-    public func decode<T>(_ type: T.Type, from: String) throws -> T where T : Decodable {
-        try decode(from: from)
     }
 }

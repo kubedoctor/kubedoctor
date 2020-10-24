@@ -18,6 +18,8 @@
 		7F0E710D24D532F900418885 /* PopupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E710C24D532F900418885 /* PopupButton.swift */; };
 		7F0E711D24D5AA0E00418885 /* editor in Resources */ = {isa = PBXBuildFile; fileRef = 7F0E711C24D5AA0E00418885 /* editor */; };
 		7F1CE7C624D6792500684647 /* EditorToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1CE7C524D6792500684647 /* EditorToolBar.swift */; };
+		7F254F4E25447C4F00419B82 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 7F254F4D25447C4F00419B82 /* Yams */; };
+		7F254F5125447CA100419B82 /* Stencil in Frameworks */ = {isa = PBXBuildFile; productRef = 7F254F5025447CA100419B82 /* Stencil */; };
 		7F719D4F24BF5A28004CC10E /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F719D4E24BF5A28004CC10E /* AppState.swift */; };
 		7F77470A24CC4E4D00EA8A7E /* ResourceCommonTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F77470924CC4E4D00EA8A7E /* ResourceCommonTableView.swift */; };
 		7F795F0924CAA3AF00212F51 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F795F0824CAA3AF00212F51 /* Config.swift */; };
@@ -41,8 +43,6 @@
 		7FAC689F2433BC1B00ACAC35 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC689E2433BC1B00ACAC35 /* Service.swift */; };
 		7FAC68A12433BDD600ACAC35 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC68A02433BDD600ACAC35 /* Secret.swift */; };
 		7FAC68A32433BF0400ACAC35 /* SecretListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC68A22433BF0400ACAC35 /* SecretListView.swift */; };
-		7FB3568724C9F05E00C87C0B /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 7FC20633244B1FF200F0680A /* Yams */; };
-		7FB3568A24C9F11D00C87C0B /* Stencil in Frameworks */ = {isa = PBXBuildFile; productRef = 7FB3568924C9F11D00C87C0B /* Stencil */; };
 		7FB69D9B241FD35B00112475 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB69D9A241FD35B00112475 /* AppDelegate.swift */; };
 		7FB69D9D241FD35B00112475 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB69D9C241FD35B00112475 /* ContentView.swift */; };
 		7FB69D9F241FD36000112475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FB69D9E241FD36000112475 /* Assets.xcassets */; };
@@ -126,8 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FB3568A24C9F11D00C87C0B /* Stencil in Frameworks */,
-				7FB3568724C9F05E00C87C0B /* Yams in Frameworks */,
+				7F254F4E25447C4F00419B82 /* Yams in Frameworks */,
+				7F254F5125447CA100419B82 /* Stencil in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,8 +391,8 @@
 			);
 			name = KubeDoctor;
 			packageProductDependencies = (
-				7FC20633244B1FF200F0680A /* Yams */,
-				7FB3568924C9F11D00C87C0B /* Stencil */,
+				7F254F4D25447C4F00419B82 /* Yams */,
+				7F254F5025447CA100419B82 /* Stencil */,
 			);
 			productName = KubeDoctor;
 			productReference = 7FB69D97241FD35B00112475 /* KubeDoctor.app */;
@@ -405,7 +405,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "翟怀楼";
 				TargetAttributes = {
 					7FB69D96241FD35B00112475 = {
@@ -423,8 +423,8 @@
 			);
 			mainGroup = 7FB69D8E241FD35B00112475;
 			packageReferences = (
-				7FC20632244B1FF200F0680A /* XCRemoteSwiftPackageReference "Yams" */,
-				7FB3568824C9F11D00C87C0B /* XCRemoteSwiftPackageReference "Stencil" */,
+				7F254F4C25447C4F00419B82 /* XCRemoteSwiftPackageReference "Yams" */,
+				7F254F4F25447CA100419B82 /* XCRemoteSwiftPackageReference "Stencil" */,
 			);
 			productRefGroup = 7FB69D98241FD35B00112475 /* Products */;
 			projectDirPath = "";
@@ -638,7 +638,7 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"KubeDoctor/Preview Content\"";
 				DEVELOPMENT_TEAM = 6687NJS8Y9;
-				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -649,7 +649,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.loulan.KubeDoctor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -668,7 +668,7 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"KubeDoctor/Preview Content\"";
 				DEVELOPMENT_TEAM = 6687NJS8Y9;
-				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -679,7 +679,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.loulan.KubeDoctor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -711,34 +711,34 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7FB3568824C9F11D00C87C0B /* XCRemoteSwiftPackageReference "Stencil" */ = {
+		7F254F4C25447C4F00419B82 /* XCRemoteSwiftPackageReference "Yams" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/stencilproject/Stencil";
+			repositoryURL = "https://github.com/jpsim/Yams";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.13.1;
+				minimumVersion = 4.0.0;
 			};
 		};
-		7FC20632244B1FF200F0680A /* XCRemoteSwiftPackageReference "Yams" */ = {
+		7F254F4F25447CA100419B82 /* XCRemoteSwiftPackageReference "Stencil" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jpsim/Yams.git";
+			repositoryURL = "https://github.com/stencilproject/Stencil.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				minimumVersion = 0.14.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7FB3568924C9F11D00C87C0B /* Stencil */ = {
+		7F254F4D25447C4F00419B82 /* Yams */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7FB3568824C9F11D00C87C0B /* XCRemoteSwiftPackageReference "Stencil" */;
-			productName = Stencil;
-		};
-		7FC20633244B1FF200F0680A /* Yams */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7FC20632244B1FF200F0680A /* XCRemoteSwiftPackageReference "Yams" */;
+			package = 7F254F4C25447C4F00419B82 /* XCRemoteSwiftPackageReference "Yams" */;
 			productName = Yams;
+		};
+		7F254F5025447CA100419B82 /* Stencil */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F254F4F25447CA100419B82 /* XCRemoteSwiftPackageReference "Stencil" */;
+			productName = Stencil;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
